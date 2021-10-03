@@ -1,5 +1,4 @@
-#include <catch.hpp>
-
+#include <catch2/catch.hpp>
 #include <qluacpp/qlua>
 
 SCENARIO("Static compilation test - instantiate service functions") {
