@@ -42,7 +42,11 @@ static void thread_safe_exec(const lua::state& l,
       }
 
       if (l.istable(-1)) {
+#if LUA_VERSION_NUM == 501
         auto len = luaL_getn(l.C_state(), -1);
+#else
+        auto len = luaL_len(l.C_state(), -1);
+#endif
         if (len == 2) {
           l.getglobal(function_name_in_lua.c_str());
           ++i;

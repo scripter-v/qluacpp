@@ -62,7 +62,7 @@ T GetCell(const unsigned int t_id,
           const unsigned int key,
           const unsigned int code) const {
   typedef std::tuple<T> return_type;                
-  return std::get<0>(l_.call<return_type>(GetCell, t_id, key, code));
+  return std::get<0>(l_.call<return_type>("GetCell", t_id, key, code));
 }                                                             
 
 // GetTableSize - получает количество строк и столбцов
